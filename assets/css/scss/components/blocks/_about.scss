@@ -1,0 +1,124 @@
+.about {
+    padding-block: vw(200px, $tabWidth);
+
+    @media (max-width: $tabBreakpoint) {
+        padding-block: vw(140px, $tabWidth);
+    }
+
+    @media (max-width: $mobBreakpoint) {
+        padding-block: vw(100px, $mobWidth);
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: vw(25px, $deskWidth);
+
+        @media (max-width: $tabBreakpoint) {
+            flex-direction: column;
+            gap: vw(20px, $tabWidth);
+        }
+
+        @media (max-width: $mobBreakpoint) {
+            gap: vw(10px, $mobWidth);
+        }
+    }
+
+    &__content {
+        width: vw(700px, $deskWidth);
+        margin-left: vw(150px, $deskWidth);
+        margin-bottom: vw(85px, $deskWidth);
+
+        @media (max-width: $tabBreakpoint) {
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: vw(50px, $tabWidth);
+        }
+
+        @media (max-width: $mobBreakpoint) {
+            margin-bottom: vw(30px, $mobWidth);
+        }
+    }
+
+    &__text-button {
+        color: var(--color-gold);
+        text-transform: uppercase;
+    }
+
+    &__holder-image {
+        height: vw(400px, $deskWidth);
+
+        @media (max-width: $tabBreakpoint) {
+            height: vw(315px, $tabWidth);
+        }
+
+        @media (max-width: $mobBreakpoint) {
+            height: vw(180px, $mobWidth);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        margin-bottom: vw(40px, $deskWidth);
+        text-transform: uppercase;
+
+        @media (max-width: $tabBreakpoint) {
+            margin-bottom: vw(30px, $tabWidth);
+        }
+
+        @media (max-width: $mobBreakpoint) {
+            margin-bottom: vw(20px, $mobWidth);
+        }
+    }
+
+    &__main-image {
+        @media (max-width: $tabBreakpoint) {
+            height: vw(400px, $deskWidth);
+            height: vw(315px, $tabWidth);
+        }
+
+        @media (max-width: $mobBreakpoint) {
+            height: vw(180px, $mobWidth);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: vw(15px, $deskWidth);
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+        font-size: vw(20px, $deskWidth);
+        font-family: var(--font-play);
+        line-height: auto;
+
+        &::before {
+            content: "";
+            width: 1px;
+            height: 100%;
+            background-color: var(--color-white);
+        }
+
+        &::after {
+            content: "";
+            width: 1px;
+            height: 100%;
+            background-color: var(--color-white);
+        }
+
+        @media (max-width: $tabBreakpoint) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+// Width VW
+$mobWidth: 375px;
+$tabWidth: 768px;
+$deskWidth: 1920px;
+
+// CSS Variables
+:root {
+    --color-white: #ffffff;
+    --color-black: #222222;
+    --color-gold: #FAD9AE;
+
+    --font-mulish: "Mulish", sans-serif;
+    --font-noto-sans: "NotoSansGeorgian", sans-serif;
+    --font-open-sans: "OpenSans", sans-serif;
+    --font-play: "Play", sans-serif;
+
+    --container-padding-x: clamp(10px, 2.5vw + 2px, 50px);
+    --header-height: 100px;
+
+    --transition-duration: 0.3s;
+}
+
+[data-theme="dark"] {
+}
+
+// Breakpoints
+$mobBreakpoint: 375px;
+$tabBreakpoint: 768px;
+$deskBreakpoint: 1024px;

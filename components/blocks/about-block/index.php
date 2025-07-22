@@ -35,8 +35,7 @@ class BlockAbout
 	{
 		$block_path = wp_normalize_path(__DIR__);
 
-		wp_enqueue_style('about-block-styles', $block_path . '/assets/style.css', [], VERSION);
-		wp_enqueue_script('about-block-scripts', $block_path . '/assets/script.js', [], VERSION);
+		wp_enqueue_script('about-block-scripts', THEME_URI_PATH . '/components/blocks/about-block/assets/script.js', [], VERSION);
 
 		return;
 	}

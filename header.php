@@ -28,8 +28,12 @@
                         class="header__btn btn load-on-click--js"
                         data-btn-id="popup"
                         data-module="./modules/modals.js">
-                        Открыть модалку
+                        <?= get_pll_translate_text('Открыть модалку', 'Open modal', 'Open modal'); ?>
                     </button>
                 </div>
+
+                <ul>
+                    <?php pll_the_languages(array('show_flags' => 1, 'show_names' => 0)); ?>
+                </ul>
             </div>
         </header>

@@ -13,17 +13,18 @@ $main_image_attrs = get_image_attrs(get_field('about_main-image'));
     <div class="about__wrapper">
         <div class="about__holder">
             <div class="about__content">
-                <h2 class="about__title">
+                <h2 class="about__title block-title">
                     <?= $title ?>
                 </h2>
 
-                <div class="about__text">
+                <div class="about__text text">
                     <?= $text ?>
                 </div>
             </div>
 
-            <div class="about__holder-image">
+            <div class="about__holder-image image image--with-left-top-triangle">
                 <img
+                    class="lazyload--js"
                     src="<?= $holder_image_attrs['url']; ?>"
                     srcset="<?= $holder_image_attrs['srcset']; ?>"
                     alt="<?= $holder_image_attrs['alt']; ?>"
@@ -31,8 +32,9 @@ $main_image_attrs = get_image_attrs(get_field('about_main-image'));
             </div>
         </div>
 
-        <div class="about__main-image">
+        <div class="about__main-image image image--with-left-top-triangle image--with-right-bottom-triangle">
             <img
+                class="lazyload--js"
                 src="<?= $main_image_attrs['url']; ?>"
                 srcset="<?= $main_image_attrs['srcset']; ?>"
                 alt="<?= $main_image_attrs['alt']; ?>"
@@ -40,7 +42,7 @@ $main_image_attrs = get_image_attrs(get_field('about_main-image'));
         </div>
 
         <div class="about__line">
-            О проекте
+            <?= get_pll_translate_text('О проекте', 'About Us', 'About Us') ?>
         </div>
     </div>
 </section>

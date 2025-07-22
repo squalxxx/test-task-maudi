@@ -26,7 +26,7 @@ function theme_setup_assets()
     wp_dequeue_style('global-styles');
 
     // Enqueue stylesheets
-    wp_enqueue_style('main-style', THEME_URI_PATH . '/assets/css/style.min.css', [], VERSION);
+    wp_enqueue_style('main-style', THEME_URI_PATH . '/assets/css/main.min.css', [], VERSION);
 
     // Enqueue scripts
     // wp_enqueue_script('main-script', THEME_URI_PATH . '/assets/js/app.js', [], VERSION, true);

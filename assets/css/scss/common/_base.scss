@@ -1,0 +1,249 @@
+body {
+    animation: pageLoadAnimation 0.15s ease forwards;
+    color: var(--color-white);
+    font-size: vw(20px, $deskWidth);
+    font-family: var(--font-open-sans);
+    font-weight: 400;
+    line-height: 140%;
+    background-color: var(--color-black);
+
+    @media (max-width: $tabBreakpoint) {
+        font-size: vw(20px, $tabWidth);
+    }
+
+    @media (max-width: $mobBreakpoint) {
+        font-size: vw(16px, $mobWidth);
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media (min-width: $deskBreakpoint) {
+        &::-webkit-scrollbar {
+            display: block;
+            width: vw(4px, $deskWidth);
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--color-black);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--color-white);
+
+            &:hover {
+                background: var(--color-white);
+            }
+        }
+    }
+
+    @keyframes pageLoadAnimation {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        100% {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+
+a,
+button,
+input,
+textarea {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    cursor: pointer;
+    color: currentColor;
+
+    @include hover {
+        color: var(--color-secondary);
+    }
+}
+
+ul,
+ol {
+    padding-left: 0;
+
+    li {
+        list-style-position: inside;
+    }
+}
+
+ul li {
+    &:where(:not([class])) {
+        list-style-type: none;
+    }
+
+    &::marker {
+        color: var(--color-primary);
+    }
+}
+
+.button {
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    padding: adapt(15, 10) adapt(40, 20);
+    user-select: none;
+    font-size: adapt(20, 16);
+    color: var(--color-black);
+    text-wrap: nowrap;
+    outline: none;
+    background-color: var(--color-primary);
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+        color: var(--color-black);
+        background-color: var(--color-secondary);
+    }
+}
+
+.container {
+    // width: min(calc(100% - var(--container-padding-x) * 2), 1410px);
+    margin-inline: auto;
+    padding: 0 var(--container-padding-x);
+    box-sizing: content-box;
+}
+
+.block-title {
+    font-size: vw(52px, $deskWidth);
+    font-family: var(--font-play);
+    font-weight: 700;
+    line-height: 120%;
+
+    @media (max-width: $tabBreakpoint) {
+        font-size: vw(44px, $tabWidth);
+    }
+
+    @media (max-width: $mobBreakpoint) {
+        font-size: vw(28px, $mobWidth);
+    }
+}
+
+.page-title {
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    margin-bottom: adapt(80, 40);
+    font-family: var(--font-family-third);
+    font-size: adapt(64, 36);
+    font-weight: 700;
+
+    &--bg {
+        @media (max-width: 660px) {
+            width: min-content;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 130%;
+            height: 130%;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            background-image: url(../images/bg-title.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.page-notice {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    color: var(--color-black);
+    margin-bottom: adapt(30, 15);
+
+    p {
+        margin-block: 0;
+    }
+}
+
+.text {
+    color: rgba(var(--color-white), 0.9);
+}
+
+.image {
+    position: relative;
+
+    &--with-left-top-triangle::before,
+    &--with-right-top-triangle::before,
+    &--with-right-bottom-triangle::after,
+    &--with-left-bottom-triangle::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: vw(70px, $deskWidth);
+        height: vw(70px, $deskWidth);
+        background-image: url("../media/svg/image-triangle.svg");
+        background-size: cover;
+
+        @media (max-width: $tabBreakpoint) {
+            width: vw(50px, $tabWidth);
+            height: vw(50px, $tabWidth);
+        }
+
+        @media (max-width: $mobBreakpoint) {
+            width: vw(25px, $mobWidth);
+            height: vw(25px, $mobWidth);
+        }
+    }
+
+    &--with-left-top-triangle {
+        &::before {
+            left: -1px;
+            top: -1px;
+        }
+    }
+
+    &--with-right-bottom-triangle {
+        &::after {
+            right: -1px;
+            bottom: -1px;
+            rotate: 180deg;
+        }
+    }
+
+    &--with-right-top-triangle {
+        &::before {
+            right: -1px;
+            top: -1px;
+        }
+    }
+
+    &--with-left-bottom-triangle {
+        &::after {
+            left: -1px;
+            bottom: -1px;
+            rotate: 180deg;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

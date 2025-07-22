@@ -1,0 +1,23 @@
+[data-validate="false"] {
+    border-color: red;
+}
+
+[data-validate="true"] {
+    border-color: transparent;
+}
+
+[data-sent="false"] {
+    display: flex;
+}
+
+[data-sent="true"] {
+    display: none;
+}
+
+[data-sent] + [data-responce] {
+    display: none;
+}
+
+[data-sent="true"] + [data-responce] {
+    display: flex;
+}

@@ -1,0 +1,43 @@
+@function px_adaptive($f-max, $f-min: null, $end: 320, $start: 1920) {
+    @if ($f-min) {
+        $k: calc(($f-max - $f-min) / ($start - $end));
+        $b: $f-min - $k * $end;
+
+        @if ($f-max < $f-min) {
+            $temp: $f-max;
+            $f-max: $f-min;
+            $f-min: $temp;
+        }
+        $w: $k * 100;
+        @return unquote("clamp(#{$f_min}px,#{$w}vw + #{$b}px, #{$f_max}px)");
+    } @else {
+        @return $f-max * 1px;
+    }
+}
+
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}
+
+@function vw($px, $viewport-width, $precision: 3) {
+    @if $viewport-width <=0 {
+        @error "Ширина области просмотра должна быть больше 0";
+    }
+
+    $vw-value: ($px / $viewport-width) * 100;
+
+    $multiplier: pow(10, $precision);
+    $rounded-value: round($vw-value * $multiplier) / $multiplier;
+
+    @return #{$rounded-value}vw;
+}

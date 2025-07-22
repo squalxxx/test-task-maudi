@@ -25,8 +25,8 @@ require_once(dirname(__FILE__) . '/includes/functions/components.php');
 require_once(dirname(__FILE__) . '/includes/handlers/form-handler.php');
 
 
-// Getter
-require_once(dirname(__FILE__) . '/includes/helpers/getter.php');
+// Text Translater
+require_once(dirname(__FILE__) . '/includes/helpers/text-translater.php');
 
 // Image Attributes
 require_once(dirname(__FILE__) . '/includes/helpers/image-attributes.php');
